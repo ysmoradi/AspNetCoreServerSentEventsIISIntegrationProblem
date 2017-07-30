@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AspNetCoreServerSentEventsIISIntegrationProblem</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        let source = new EventSource("/sse");
+
+        source.onmessage = function (event) {
+            document.body.innerText += `New Message arrived: ${event.data} at client side time ${new Date()} \n`;
+        };
+
+    </script>
+</body>
+
+</html>
